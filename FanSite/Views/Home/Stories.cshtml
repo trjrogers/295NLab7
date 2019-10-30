@@ -1,16 +1,17 @@
 ﻿@model List<Story>
 
 @{
-    Layout = null;
+    Layout = "_general";
+    ViewBag.Title = "Stories about the Joker";
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Stories</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1>Stories</h1>
         <ul>
             <li><h1><a href="/">Home</a></h1></li>

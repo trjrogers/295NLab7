@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<PhysicalMediaModel>
 @{
-    Layout = null;
+    Layout = "_sources";
+    ViewBag.Title = "More about the Joker from the publishers";
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Physical Media</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1>Physical Media</h1>
         <ul>
             <li><h1><a href="/">Home</a></h1></li>

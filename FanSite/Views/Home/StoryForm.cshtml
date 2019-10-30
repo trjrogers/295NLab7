@@ -1,17 +1,18 @@
 ﻿@model FanSite.Models.Story
 
 @{
-    Layout = null;
+    Layout = "_general";
+    ViewBag.Title = "Leave Your Story About The Joker";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Stories</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1>Stories</h1>
         <ul>
             <li><h1><a href="/">Home</a></h1></li>
@@ -20,7 +21,7 @@
             <li><h1><a href="/Sources/OnlineMedia">Links to online media</a></h1></li>*@
         </ul>
 
-        <form asp-action="StoryForm" method="post">
+        <form asp-action="StoryForm" asp-controller="Home" method="post">
             <div>
                 <label asp-for="User.Username">Username:</label>
                 <input asp-for="User.Username" />

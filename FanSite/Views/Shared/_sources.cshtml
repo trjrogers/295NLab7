@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        #body {
+            background-color: purple;
+        }
+
+        #mainDiv {
+            padding: 20px;
+            border: solid medium green;
+            font-size: 20pt;
+            background-color: purple;
+            color: green
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

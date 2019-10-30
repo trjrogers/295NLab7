@@ -1,17 +1,18 @@
 ﻿@*@model Comment*@
 @model String
 @{
-    Layout = null;
+    Layout = "_general";
+    ViewBag.Title = "Leave a comment";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Comment on story</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1>Comment on this story</h1>
         <ul>
             <li><h1><a href="/">Home</a></h1></li>
@@ -20,8 +21,8 @@
             <li><h1><a href="/Sources/OnlineMedia">Links to online media</a></h1></li>*@
         </ul>
         <form asp-action="CommentForm" method="post">
-            <label name="@Model">Story title:</label>
-            <input name="storyTitle" value="@Model" />
+            <label name="@Model" hidden>Story title:</label>
+            <input name="storyTitle" hidden value="@Model" />
             <div>
                 <label name="username">Username:</label>
                 <input name="username" />

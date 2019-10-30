@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<OnlineMediaModel>;
 
 @{
-    Layout = null;
+    Layout = "_sources";
+    ViewBag.Title = "More sites about the Joker";
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Online Media</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1>Online Media</h1>
         <ul>
             <li><h1><a href="/">Home</a></h1></li>
