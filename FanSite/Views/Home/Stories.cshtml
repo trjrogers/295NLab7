@@ -1,0 +1,45 @@
+﻿@model List<Story>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stories</title>
+</head>
+<body>
+    <div>
+        <h1>Stories</h1>
+        <ul>
+            <li><h1><a href="/">Home</a></h1></li>
+            <li><h1><a href="/Sources/Index">Sources</a></h1></li>
+            @*<li><h1><a href="/Sources/PhysicalMedia">Books and print media</a></h1></li>
+            <li><h1><a href="/Sources/OnlineMedia">Links to online media</a></h1></li>*@
+        </ul>
+
+        <p>Stories</p>
+        @foreach (Story story in Model)
+        {
+            @story.StoryTitle <br />
+            @story.StoryText <br />
+            @story.User.Username<br />
+            <a asp-route-title="@story.StoryTitle" asp-action="CommentForm">Add a comment</a><br />
+
+            @if (story.Comments.Count > 0)
+            {
+                <h3>Comments</h3>
+                @foreach (Comment c in story.Comments)
+                {
+                    @c.CommentText <br />
+                }
+            }<br />
+
+            @*string url = "CommentForm" + "?title=" + @story.StoryTitle;
+            <a href="@url">Add comment</a>*@
+        }
+        <p><a asp-action="StoryForm">Submit a story</a></p>
+    </div>
+</body>
+</html>

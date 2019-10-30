@@ -1,0 +1,43 @@
+﻿@*@model Comment*@
+@model String
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Comment on story</title>
+</head>
+<body>
+    <div>
+        <h1>Comment on this story</h1>
+        <ul>
+            <li><h1><a href="/">Home</a></h1></li>
+            <li><h1><a href="/Sources/Index">Sources</a></h1></li>
+            @*<li><h1><a href="/Sources/PhysicalMedia">Books and print media</a></h1></li>
+            <li><h1><a href="/Sources/OnlineMedia">Links to online media</a></h1></li>*@
+        </ul>
+        <form asp-action="CommentForm" method="post">
+            <label name="@Model">Story title:</label>
+            <input name="storyTitle" value="@Model" />
+            <div>
+                <label name="username">Username:</label>
+                <input name="username" />
+            </div>
+            <div>
+                <label name="email">Your email:</label>
+                <input name="email" />
+            </div>
+            <div>
+                <label name="CommentText">Comment:</label>
+                <input name="CommentText" />
+            </div>
+            <div>
+                <button type="submit">Submit Comment</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
