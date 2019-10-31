@@ -31,6 +31,7 @@ namespace FanSite.Controllers
         [HttpGet]
         public ViewResult StoryForm()
         {
+            ViewData["Header"] = "Leave Your Story About The Joker";
             return View();
         }
 
@@ -54,6 +55,7 @@ namespace FanSite.Controllers
 
         public ViewResult CommentForm(string title) 
         {
+            ViewBag.NameOfStory = title;
             return View("CommentForm", HttpUtility.HtmlDecode(title));
         }
 
