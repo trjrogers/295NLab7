@@ -70,7 +70,7 @@ using FanSite.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(135, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "229253e842d54040871131d16c380983", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1d213d407904d98a010fc7374a3c42d", async() => {
                 BeginContext(141, 72, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>");
                 EndContext();
@@ -100,7 +100,7 @@ using FanSite.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(246, 1251, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a08a4556fad84ac38f12e50b280d7b6d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f7ce1be2d7542c9876eaa96f2b82380", async() => {
                 BeginContext(252, 49, true);
                 WriteLiteral("\r\n    <div id=\"mainDiv\">\r\n        <h1>Comment on ");
                 EndContext();
@@ -118,7 +118,7 @@ using FanSite.Models;
                 WriteLiteral("        </ul>\r\n        ");
                 EndContext();
                 BeginContext(667, 710, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c135056acf494f408f1826584b159361", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b75b9c95f24424e9c5360f5a8e703de", async() => {
                     BeginContext(712, 20, true);
                     WriteLiteral("\r\n            <label");
                     EndContext();
@@ -180,7 +180,7 @@ WriteAttributeValue("", 827, Model, 827, 6, false);
                 WriteLiteral("\r\n        <div>\r\n            Click to return to ");
                 EndContext();
                 BeginContext(1425, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e766a5b3d7f4a668450dd0188eba412", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "288fcfa60edc4dbab304d2fb182941e4", async() => {
                     BeginContext(1449, 7, true);
                     WriteLiteral("stories");
                     EndContext();

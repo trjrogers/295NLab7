@@ -67,7 +67,7 @@ using FanSite.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(128, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6bb9ae423e5347c89a670b920fe7e0f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a9cca30c1334c949b5a9b12305f6477", async() => {
                 BeginContext(134, 72, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>");
                 EndContext();
@@ -97,7 +97,7 @@ using FanSite.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(239, 1151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37b3ddefedc54826bfc96f0a81cec986", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6669af194fa42649fba31fcb927f41c", async() => {
                 BeginContext(245, 186, true);
                 WriteLiteral("\r\n    <div id=\"mainDiv\">\r\n        <h1>Stories</h1>\r\n        <ul>\r\n            <li><h1><a href=\"/\">Home</a></h1></li>\r\n            <li><h1><a href=\"/Sources/Index\">Sources</a></h1></li>\r\n");
                 EndContext();
@@ -142,7 +142,7 @@ using FanSite.Models;
                 WriteLiteral("<br />\r\n            ");
                 EndContext();
                 BeginContext(833, 81, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77069ff765b54b28a30ebdf1d0b478ff", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0485752555e54c8e9df83e1585729643", async() => {
                     BeginContext(897, 13, true);
                     WriteLiteral("Add a comment");
                     EndContext();
@@ -226,7 +226,7 @@ using FanSite.Models;
                 WriteLiteral("        <p>");
                 EndContext();
                 BeginContext(1321, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d757e8a3ebd411abdfc6deaadaeee32", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f7e967a6b80434f8259f12a4c28b327", async() => {
                     BeginContext(1347, 14, true);
                     WriteLiteral("Submit a story");
                     EndContext();

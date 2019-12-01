@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FanSite.Models;
 using System.Web;
+using FanSite.Repositories;
 
 namespace FanSite.Controllers
 {
@@ -14,6 +15,13 @@ namespace FanSite.Controllers
 
     public class HomeController : Controller
     {
+        IStoryRepository repo;
+
+        public HomeController(IStoryRepository r)
+        {
+            repo = r;
+        }
+
         public ViewResult Index()
         {
             return View();
@@ -26,8 +34,12 @@ namespace FanSite.Controllers
 
         public ViewResult Stories()
         {
-            List<Story> stories = Repository.stories;
-            Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            //List<Story> stories = StoryRepository.stories;
+            //StoryRepository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            //return View(stories);
+
+            List<Story> stories = repo.Stories.ToList();
+            stories.Sort((s1, s2) => string.Compare(s1.StoryTitle, s2.StoryTitle, StringComparison.Ordinal));
             return View(stories);
         }
 
@@ -41,16 +53,21 @@ namespace FanSite.Controllers
         [HttpPost]
         public ActionResult StoryForm(Story story)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    StoryRepository.AddStory(story);
+            //    //Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            //    IEnumerable<Story> stories = SortStories(StoryRepository.stories);
+            //    return RedirectToAction("Stories", stories);
+            //} else
+            //{
+            //    return View();
+            //}
             if (ModelState.IsValid)
             {
-                Repository.AddStory(story);
-                //Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
-                IEnumerable<Story> stories = SortStories(Repository.stories);
-                return RedirectToAction("Stories", stories);
-            } else
-            {
-                return View();
+                repo.AddStory(story);
             }
+            return RedirectToAction("Stories");
         }
 
         // Creates a new comment using passed parameter
@@ -65,31 +82,44 @@ namespace FanSite.Controllers
         [HttpPost]
         public ViewResult CommentForm(string storyTitle, string username, string email, string commentText)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    Story s = RetrieveStory(storyTitle);
+            //    User u = new User() { Email = email, Username = username };
+            //    Comment c = new Comment() { CommentText = commentText, User = u };
+            //    s.AddComment(c);
+            //    List<Story> stories = StoryRepository.stories;
+            //    foreach(Story story in stories)
+            //    {
+            //        SortComments(story.Comments);
+            //    }
+            //    return View("Stories", stories);
+            //} else
+            //{
+            //    List<Story> stories = StoryRepository.stories;
+            //    return View("Stories", stories);
+            //}
+
             if (ModelState.IsValid)
             {
-                Story s = RetrieveStory(storyTitle);
+                Story story = repo.GetStoryByTitle(storyTitle);
                 User u = new User() { Email = email, Username = username };
                 Comment c = new Comment() { CommentText = commentText, User = u };
-                s.AddComment(c);
-                List<Story> stories = Repository.stories;
-                foreach(Story story in stories)
-                {
-                    SortComments(story.Comments);
-                }
-                return View("Stories", stories);
-            } else
+                story.AddComment(c);
+                return View("Stories");
+            }
+            else
             {
-                List<Story> stories = Repository.stories;
-                return View("Stories", stories);
+                return View("StoryForm");
             }
         }
 
-        public IEnumerable<Story> SortStories(IEnumerable<Story> stories)
-        {
-            Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
-            IEnumerable<Story> s = Repository.Stories;
-            return s;
-        }
+        //public IEnumerable<Story> SortStories(IEnumerable<Story> stories)
+        //{
+        //    StoryRepository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+        //    IEnumerable<Story> s = StoryRepository.Stories;
+        //    return s;
+        //}
 
         public List<Comment> SortComments(List<Comment> c)
         {
@@ -103,10 +133,10 @@ namespace FanSite.Controllers
             return View();
         }
 
-        public Story RetrieveStory(string storyTitle)
-        {
-            return Repository.GetStoryByTitle(storyTitle);
+        //public Story RetrieveStory(string storyTitle)
+        //{
+        //    return StoryRepository.GetStoryByTitle(storyTitle);
 
-        }
+        //}
     }
 }
