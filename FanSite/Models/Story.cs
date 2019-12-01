@@ -8,7 +8,7 @@ namespace FanSite.Models
 {
     public class Story
     {
-        public List<Comment> comments = new List<Comment>();
+        private List<Comment> comments = new List<Comment>();
 
         public List<Comment> Comments { get { return comments; } }
 

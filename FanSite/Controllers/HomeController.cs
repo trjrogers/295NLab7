@@ -9,6 +9,9 @@ using System.Web;
 
 namespace FanSite.Controllers
 {
+    // 3 new methods: SortStories (1st different return type IEnumerable<Story>), SortComments (2nd different return type List<Comment>), RetrieveStory (3rd different return type Story)
+    // 4th different return type, changed StoryForm post method to ActionResult type
+
     public class HomeController : Controller
     {
         public ViewResult Index()
@@ -36,14 +39,14 @@ namespace FanSite.Controllers
         }
 
         [HttpPost]
-        public ViewResult StoryForm(Story story)
+        public ActionResult StoryForm(Story story)
         {
             if (ModelState.IsValid)
             {
                 Repository.AddStory(story);
-                Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
-                IEnumerable<Story> stories = Repository.Stories;
-                return View("Stories", stories);
+                //Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+                IEnumerable<Story> stories = SortStories(Repository.stories);
+                return RedirectToAction("Stories", stories);
             } else
             {
                 return View();
@@ -64,11 +67,15 @@ namespace FanSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                Story s = Repository.GetStoryByTitle(storyTitle);
+                Story s = RetrieveStory(storyTitle);
                 User u = new User() { Email = email, Username = username };
                 Comment c = new Comment() { CommentText = commentText, User = u };
                 s.AddComment(c);
                 List<Story> stories = Repository.stories;
+                foreach(Story story in stories)
+                {
+                    SortComments(story.Comments);
+                }
                 return View("Stories", stories);
             } else
             {
@@ -77,10 +84,29 @@ namespace FanSite.Controllers
             }
         }
 
+        public IEnumerable<Story> SortStories(IEnumerable<Story> stories)
+        {
+            Repository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            IEnumerable<Story> s = Repository.Stories;
+            return s;
+        }
+
+        public List<Comment> SortComments(List<Comment> c)
+        {
+            c.Sort((a, b) => a.CommentText.CompareTo(b.CommentText));
+            return c;
+        }
+
 
         public ViewResult Sources()
         {
             return View();
+        }
+
+        public Story RetrieveStory(string storyTitle)
+        {
+            return Repository.GetStoryByTitle(storyTitle);
+
         }
     }
 }

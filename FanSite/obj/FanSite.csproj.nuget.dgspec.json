@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\F19\\295N\\production\\FanSite\\FanSite.csproj": {}
+    "C:\\Dev\\F19\\295N\\Lab\\FanSite\\FanSite.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\F19\\295N\\production\\FanSite\\FanSite.csproj": {
+    "C:\\Dev\\F19\\295N\\Lab\\FanSite\\FanSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\F19\\295N\\production\\FanSite\\FanSite.csproj",
+        "projectUniqueName": "C:\\Dev\\F19\\295N\\Lab\\FanSite\\FanSite.csproj",
         "projectName": "FanSite",
-        "projectPath": "C:\\Dev\\F19\\295N\\production\\FanSite\\FanSite.csproj",
+        "projectPath": "C:\\Dev\\F19\\295N\\Lab\\FanSite\\FanSite.csproj",
         "packagesPath": "C:\\Users\\Trevor\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\F19\\295N\\production\\FanSite\\obj\\",
+        "outputPath": "C:\\Dev\\F19\\295N\\Lab\\FanSite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Trevor\\AppData\\Roaming\\NuGet\\NuGet.Config",
