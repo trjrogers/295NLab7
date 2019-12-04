@@ -38,7 +38,8 @@ namespace FanSite.Controllers
             //StoryRepository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
             //return View(stories);
 
-            List<Story> stories = repo.Stories.ToList();
+            //List<Story> stories = repo.Stories.ToList<Story>();
+            List<Story> stories = repo.StoriesList;
             stories.Sort((s1, s2) => string.Compare(s1.StoryTitle, s2.StoryTitle, StringComparison.Ordinal));
             return View(stories);
         }
@@ -106,7 +107,9 @@ namespace FanSite.Controllers
                 User u = new User() { Email = email, Username = username };
                 Comment c = new Comment() { CommentText = commentText, User = u };
                 story.AddComment(c);
-                return View("Stories");
+                List<Story> stories = repo.StoriesList;
+                //stories.Sort((s1, s2) => string.Compare(s1.StoryTitle, s2.StoryTitle, StringComparison.Ordinal));
+                return View("Stories", stories);
             }
             else
             {
@@ -114,12 +117,15 @@ namespace FanSite.Controllers
             }
         }
 
-        //public IEnumerable<Story> SortStories(IEnumerable<Story> stories)
-        //{
-        //    StoryRepository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
-        //    IEnumerable<Story> s = StoryRepository.Stories;
-        //    return s;
-        //}
+        public List<Story> SortStories(List<Story> stories)
+        {
+            //repo.StoriesList.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            //IEnumerable<Story> s = StoryRepository.Stories;
+            //StoryRepository.stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            //List<Story> s = StoryRepository.stories;
+            stories.Sort((a, b) => a.StoryTitle.CompareTo(b.StoryTitle));
+            return stories;
+        }
 
         public List<Comment> SortComments(List<Comment> c)
         {

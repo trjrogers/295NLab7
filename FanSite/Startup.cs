@@ -36,25 +36,8 @@ namespace FanSite
             // Inject our repositories into our controllers
             services.AddTransient<IStoryRepository, StoryRepository>();
 
-            //var os = RuntimeInformation.OSArchitecture;
-            //if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            //{
-            //    services.AddDbContext<AppDbContext>(
-            //        options => options.UseSqlServer(
-            //            Configuration.GetConnectionString("SqlServerConnection")));
-            //}
-            //else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            //{
-            //    services.AddDbContext<AppDbContext>(
-            //       options => options.UseSqlite(
-            //                Configuration.GetConnectionString("SQLiteConnectionString")));
-            //}
-            //else
-            //{
-            //    services.AddDbContext<AppDbContext>(
-            //        options => options.UseMySql(
-            //            Configuration.GetConnectionString("MySqlConnection")));
-            //}
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+                            Configuration["ConnectionStrings:MsSqlConnection"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

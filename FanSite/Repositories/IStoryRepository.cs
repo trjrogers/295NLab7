@@ -10,8 +10,10 @@ namespace FanSite.Repositories
     public interface IStoryRepository
     {
         IQueryable<Story> Stories { get; }
+
+        List<Story> StoriesList { get; }
         void AddStory(Story story);
-        //void AddComment(Story story, Comment comment);
+        void AddComment(Story story, Comment comment);
         Story GetStoryByTitle(string storyTitle);
     }
 }

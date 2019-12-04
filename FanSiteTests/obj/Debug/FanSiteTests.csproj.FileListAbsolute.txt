@@ -1,0 +1,16 @@
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\FanSiteTests.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\FanSiteTests.pdb
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.abstractions.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.assert.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.core.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.execution.desktop.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.assert.xml
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.core.xml
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.execution.desktop.xml
+C:\Dev\F19\295N\Lab\FanSiteTests\obj\Debug\FanSiteTests.csprojAssemblyReference.cache
+C:\Dev\F19\295N\Lab\FanSiteTests\obj\Debug\FanSiteTests.csproj.CopyComplete
+C:\Dev\F19\295N\Lab\FanSiteTests\obj\Debug\FanSiteTests.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\obj\Debug\FanSiteTests.pdb
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Dev\F19\295N\Lab\FanSiteTests\bin\Debug\xunit.runner.utility.net452.dll

@@ -8,11 +8,13 @@ namespace FanSite.Models
 {
     public class Comment
     {
+        public int Id { get; set; }
+
         //Added these in the effort to provide the commented-on-story's title to the view, which is happening, 
         //but when I pass the title back to the controller, the title is 'null'
         //public string storyTitle;
-        public string username;
-        public string email;
+        //public string username;
+        //public string email;
 
         [Required(ErrorMessage = "Please enter your username")]
         public User User{ get; set; }

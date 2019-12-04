@@ -20,23 +20,22 @@
             <li><h1><a href="/Sources/OnlineMedia">Links to online media</a></h1></li>*@
         </ul>
 
-        <p>Stories</p>
+        <h2>Stories</h2>
         @foreach (Story story in Model)
         {
             @story.StoryTitle <br />
             @story.StoryText <br />
             @story.User.Username<br />
-            <a asp-route-title="@story.StoryTitle" asp-action="CommentForm">Add a comment</a><br />
 
             @if (story.Comments.Count > 0)
             {
-                <h3>Comments</h3>
+                <p>Comments</p>
                 @foreach (Comment c in story.Comments)
                 {
                     @c.CommentText <br />
                 }
             }<br />
-
+            <a asp-route-title="@story.StoryTitle" asp-action="CommentForm">Add a comment</a><br />
             @*string url = "CommentForm" + "?title=" + @story.StoryTitle;
             <a href="@url">Add comment</a>*@
         }
